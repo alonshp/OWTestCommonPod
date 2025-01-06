@@ -18,7 +18,7 @@ func createProducts() -> [Product] {
                                .library(name: "RxSwift", targets: [owSDKWrapperTarget]),
                                .library(name: "RxCocoa", targets: [owSDKWrapperTarget]),
                                .library(name: "RxRelay", targets: [owSDKWrapperTarget]),
-                               .library(name: "OpenWebCommon", targets: ["OpenWebCommon"])]
+                               .library(name: "OpenWebCommon", targets: [owSDKWrapperTarget])]
 
     return products
 }
@@ -51,7 +51,7 @@ func createTargets() -> [Target] {
         name: owSDKWrapperTarget,
         dependencies: [
             .target(name: "OpenWebSDK", condition: .when(platforms: .some([.iOS]))),
-						.target(name: "OpenWebCommon", condition: .when(platforms: .some([.iOS]))),
+            .target(name: "OpenWebCommon", condition: .when(platforms: .some([.iOS]))),
             .target(name: "RxSwift", condition: .when(platforms: .some([.iOS]))),
             .target(name: "RxCocoa", condition: .when(platforms: .some([.iOS]))),
             .target(name: "RxRelay", condition: .when(platforms: .some([.iOS])))
