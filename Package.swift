@@ -17,7 +17,8 @@ func createProducts() -> [Product] {
     let products: [Product] = [.library(name: owSDK, targets: [owSDKWrapperTarget]),
                                .library(name: "RxSwift", targets: [owSDKWrapperTarget]),
                                .library(name: "RxCocoa", targets: [owSDKWrapperTarget]),
-                               .library(name: "RxRelay", targets: [owSDKWrapperTarget])]
+                               .library(name: "RxRelay", targets: [owSDKWrapperTarget]),
+                               .library(name: "OpenWebCommon", targets: ["OpenWebCommon"])]
 
     return products
 }
